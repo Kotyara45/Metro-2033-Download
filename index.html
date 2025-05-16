@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Metro 2033 Redux - Візитка</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Metro 2033 Redux</h1>
+  </header>
+  <main>
+    <p>Захоплююча гра в постапокаліптичному метро Москви.</p>
+    <button id="downloadBtn">Скачати гру</button>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        // Користувач авторизований — переходимо на скачування
+        window.location.href = 'download.html';
+      } else {
+        // Не авторизований — переходимо на реєстрацію
+        window.location.href = 'register.html';
+      }
+    });
+  </script>
+</body>
+</html>
