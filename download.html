@@ -1,0 +1,26 @@
+
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Скачати Metro 2033 Redux</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Скачати Metro 2033 Redux</h1>
+  </header>
+  <main>
+    <p>Дякуємо за реєстрацію, <span id="user"></span>! Ось посилання для скачування гри:</p>
+    <a href="files/metro2033redux.zip" download>Завантажити гру</a>
+  </main>
+
+  <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      // Якщо не авторизований, перекидаємо на реєстрацію
+      window.location.href = 'register.html';
+    } else {
+      document.getElementById('user').textContent = localStorage.getItem('username');
+    }
+  </script>
+</body>
+</html>
