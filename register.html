@@ -36,7 +36,14 @@
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      // Можна додати перевірки та зберегти користувача в localStorage
+      downloadBtn.addEventListener('click', () => {
+  if (localStorage.getItem('isLoggedIn') === 'true') {
+    window.location.href = 'https://drive.google.com/drive/folders/1FRFG0LOk9RbFcQTLnhZMaHEjvm3N1MKH';
+  } else {
+    alert('Щоб скачати гру, будь ласка, увійдіть або зареєструйтесь.');
+    window.location.href = 'register.html';
+  }
+
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('username', username);
 
