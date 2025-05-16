@@ -1,0 +1,48 @@
+
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Реєстрація - Metro 2033 Redux</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Реєстрація</h1>
+  </header>
+  <main>
+    <form id="registerForm">
+      <label>
+        Ім'я:<br />
+        <input type="text" id="username" required />
+      </label><br />
+      <label>
+        Email:<br />
+        <input type="email" id="email" required />
+      </label><br />
+      <label>
+        Пароль:<br />
+        <input type="password" id="password" required />
+      </label><br />
+      <button type="submit">Зареєструватися</button>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Проста імітація реєстрації (без серверу)
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Можна додати перевірки та зберегти користувача в localStorage
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('username', username);
+
+      alert('Реєстрація успішна! Тепер ви можете скачати гру.');
+      window.location.href = 'download.html';
+    });
+  </script>
+</body>
+</html>
